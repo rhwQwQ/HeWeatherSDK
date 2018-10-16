@@ -7,9 +7,9 @@
 @class WeatherHistoricalBaseClassBasic,WeatherHistoricalBaseClassDaily_Weather,WeatherHistoricalBaseClassHourly_Weather;
 @interface WeatherHistoricalBaseClass : HeWeatherBaseModel
 
-@property (nonatomic, strong) NSArray<WeatherHistoricalBaseClassBasic *> *basic;
+@property (nonatomic, strong) WeatherHistoricalBaseClassBasic *basic;
 
-@property (nonatomic, strong) NSArray<WeatherHistoricalBaseClassDaily_Weather *> *daily_weather;
+@property (nonatomic, strong) WeatherHistoricalBaseClassDaily_Weather *daily_weather;
 
 @property (nonatomic, strong) NSArray<WeatherHistoricalBaseClassHourly_Weather *> *hourly_weather;
 
@@ -55,14 +55,14 @@
 
 @interface WeatherHistoricalBaseClassHourly_Weather : HeWeatherBaseModel
 
-@property (nonatomic, strong) NSString *brief;
-@property (nonatomic, strong) NSString *spd;
+@property (nonatomic, strong) NSString *cond_txt;
+@property (nonatomic, strong) NSString *wind_spd;
 @property (nonatomic, strong) NSString *pres;
-@property (nonatomic, strong) NSString *code;
+@property (nonatomic, strong) NSString *cond_code;
 @property (nonatomic, strong) NSString *hum;
-@property (nonatomic, strong) NSString *sc;
-@property (nonatomic, strong) NSString *date;
-@property (nonatomic, strong) NSString *dir;
+@property (nonatomic, strong) NSString *wind_sc;
+@property (nonatomic, strong) NSString *time;
+@property (nonatomic, strong) NSString *wind_dir;
 @property (nonatomic, strong) NSString *tmp;
 
 @end
