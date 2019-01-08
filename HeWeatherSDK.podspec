@@ -10,7 +10,7 @@ s.description      = <<-DESC
 s.homepage         = "https://github.com/rhwQwQ/HeWeatherSDK.git"                               #主页,这里要填写可以访问到的地址，不然验证不通过
 s.license          = 'MIT'              #开源协议
 s.author           = { "rhw" => "920731000@qq.com" }                   #作者信息
-s.source           = { :git => "https://github.com/rhwQwQ/HeWeatherSDK.git", :tag => "1.5.1" }      #项目地址，这里不支持ssh的地址，验证不通过，只支持HTTP和HTTPS，最好使用HTTPS
+s.source           = { :git => "https://github.com/rhwQwQ/HeWeatherSDK.git", :tag => "1.7.1" }      #项目地址，这里不支持ssh的地址，验证不通过，只支持HTTP和HTTPS，最好使用HTTPS
 s.platform     = :ios, '8.0'            #支持的平台及版本
 s.requires_arc = true                   #是否使用ARC，如果指定具体文件，则具体的问题使用ARC
 s.vendored_frameworks ='HeWeather.framework'
