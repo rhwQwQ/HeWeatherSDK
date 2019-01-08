@@ -21,7 +21,7 @@
 ### 1.2自动配置
 > 支持cocoaPods
  
-> podfile添加pod 'HeWeatherSDK', '~> 1.4.8'
+> podfile添加pod 'HeWeatherSDK', '~> 1.7.1'
 
 > 执行pod install即可
 
