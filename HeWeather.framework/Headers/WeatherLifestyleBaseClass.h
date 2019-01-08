@@ -9,9 +9,11 @@
 
 @property (nonatomic, copy) NSString *status;
 
-@property (nonatomic, strong) NSArray<WeatherLifestyleBaseClassLifestyle *> *lifestyle;
+@property (nonatomic, strong) NSArray<WeatherLifestyleBaseClassLifestyle *> *lifestyle_forecast;
 
-@property (nonatomic, strong) WeatherLifestyleBaseClassBasic *basic;
+@property (nonatomic, strong) WeatherLifestyleBaseClassLifestyle *basic;
+
+@property (nonatomic, strong) WeatherLifestyleBaseClassBasic *lifestyle;
 
 @property (nonatomic, strong) WeatherLifestyleBaseClassUpdate *update;
 
@@ -45,6 +47,7 @@
 @end
 
 @interface WeatherLifestyleBaseClassLifestyle : HeWeatherBaseModel
+@property (nonatomic, copy) NSString *date;
 
 @property (nonatomic, copy) NSString *brf;
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "HeWeatherSDK"    #名称
-s.version          = "1.5.1"             #版本号
+s.version          = "1.7.1"             #版本号
 s.summary          = "和风天气SDK"     #简短介绍，下面是详细介绍
 s.description      = <<-DESC
                      Testing Private Podspec.

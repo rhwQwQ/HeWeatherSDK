@@ -19,7 +19,10 @@
 
 @property (nonatomic, strong) WeatherBaseClassBasic *basic;
 
-@property (nonatomic, strong) NSArray<WeatherBaseClassLifestyle *> *lifestyle;
+@property (nonatomic, strong) NSArray<WeatherBaseClassLifestyle *> *lifestyle_forecast;
+
+@property (nonatomic, strong) WeatherBaseClassLifestyle  *lifestyle;
+
 
 @end
 @interface WeatherBaseClassNow : HeWeatherBaseModel
@@ -114,6 +117,14 @@
 
 @property (nonatomic, copy) NSString *pop;
 
+@property (nonatomic, copy) NSString *sr;
+
+@property (nonatomic, copy) NSString *ss;
+
+@property (nonatomic, copy) NSString *mr;
+
+@property (nonatomic, copy) NSString *ms;
+
 @end
 
 @interface WeatherBaseClassHourly : HeWeatherBaseModel
@@ -145,6 +156,8 @@
 @end
 
 @interface WeatherBaseClassLifestyle : HeWeatherBaseModel
+
+@property (nonatomic, copy) NSString *date;
 
 @property (nonatomic, copy) NSString *brf;
 

@@ -17,7 +17,7 @@ FOUNDATION_EXPORT const unsigned char HeWeatherVersionString[];
 //  #import <HeWeather/HeWeather.h>
 
 
-/* 当前版本 2018-10-16 1.5.1 */
+/* 当前版本 2019-01-04 1.7.1 */
 
 /**
  * 写在前面的（废）话

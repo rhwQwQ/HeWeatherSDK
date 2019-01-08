@@ -41,29 +41,35 @@
 @interface WeatherHistoricalBaseClassDaily_Weather : HeWeatherBaseModel
 
 @property (nonatomic, strong) NSString *mr;
-@property (nonatomic, strong) NSString *tmpMin;
+@property (nonatomic, strong) NSString *tmp_min;
 @property (nonatomic, strong) NSString *pres;
 @property (nonatomic, strong) NSString *sr;
 @property (nonatomic, strong) NSString *hum;
 @property (nonatomic, strong) NSString *date;
 @property (nonatomic, strong) NSString *ms;
 @property (nonatomic, strong) NSString *ss;
-@property (nonatomic, strong) NSString *tmpMax;
+@property (nonatomic, strong) NSString *tmp_max;
 @property (nonatomic, strong) NSString *pcpn;
 
 @end
 
 @interface WeatherHistoricalBaseClassHourly_Weather : HeWeatherBaseModel
 
-@property (nonatomic, strong) NSString *cond_txt;
-@property (nonatomic, strong) NSString *wind_spd;
+@property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *spd;
 @property (nonatomic, strong) NSString *pres;
-@property (nonatomic, strong) NSString *cond_code;
+@property (nonatomic, strong) NSString *code;
 @property (nonatomic, strong) NSString *hum;
-@property (nonatomic, strong) NSString *wind_sc;
-@property (nonatomic, strong) NSString *time;
-@property (nonatomic, strong) NSString *wind_dir;
+@property (nonatomic, strong) NSString *sc;
+@property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSString *dir;
 @property (nonatomic, strong) NSString *tmp;
+@property (nonatomic, strong) NSString *deg;
+@property (nonatomic, strong) NSString *brief;
+@property (nonatomic, strong) NSString *pcpn;
+@property (nonatomic, strong) NSString *vis;
+
+
 
 @end
 

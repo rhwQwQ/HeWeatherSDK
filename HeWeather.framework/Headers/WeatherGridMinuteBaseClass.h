@@ -24,6 +24,8 @@
 
 @property (nonatomic, copy) NSString *date;
 
+@property (nonatomic, copy) NSString *txt;
+
 @end
 
 @interface WeatherGridMinuteBaseClassBasic : HeWeatherBaseModel
