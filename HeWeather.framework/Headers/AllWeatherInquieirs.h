@@ -80,6 +80,11 @@ typedef NS_ENUM(NSInteger, UNIT_TYPE) {
 
 @property (nonatomic, copy) NSString *kHeAppKey;
 
+/**
+ 请求超时时间，默认30秒
+ */
+@property (nonatomic, assign) NSTimeInterval timeoutInterval;
+
 /** 根据接口需要填写 必填项 选填项 */
 
 #pragma mark - 必选参数
@@ -103,6 +108,7 @@ typedef NS_ENUM(NSInteger, UNIT_TYPE) {
  */
 
 @property (nonatomic, copy) NSString *location;
+
 
 /**
  获取制定日期的历史数据，格式为yyyy-mm-dd
@@ -219,4 +225,10 @@ typedef NS_ENUM(NSInteger, UNIT_TYPE) {
                    WithSuccess:(void(^)(id responseObject))getSuccess
               faileureForError:(void(^)(NSError *error))getError;
 
+/**
+ 修改域名
+
+ @param domain 访问域名字符串，默认https://api.heweather.net
+ */
+-(void)changeDomain:(NSString *)domain;
 @end

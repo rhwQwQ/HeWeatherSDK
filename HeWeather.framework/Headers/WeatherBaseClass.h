@@ -21,8 +21,7 @@
 
 @property (nonatomic, strong) NSArray<WeatherBaseClassLifestyle *> *lifestyle_forecast;
 
-@property (nonatomic, strong) WeatherBaseClassLifestyle  *lifestyle;
-
+@property (nonatomic, strong) NSArray<WeatherBaseClassLifestyle *> *lifestyle;
 
 @end
 @interface WeatherBaseClassNow : HeWeatherBaseModel
