@@ -21,15 +21,15 @@
 ### 1.2自动配置
 > 支持cocoaPods
  
-> podfile添加pod 'HeWeatherSDK', '~> 1.7.1'
+> podfile添加pod 'HeWeatherSDK'
 
 > 执行pod install即可
 
 
 ### 1.3引用库
-> AFNetworking (3.1.0+)
+> AFNetworking 
 
-> YYModel  （1.0.4+）
+> YYModel  
 
 ## 2.接口和数据类对照
 
