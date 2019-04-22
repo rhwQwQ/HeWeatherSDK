@@ -1,14 +1,16 @@
-# HeWeatherSDK
+
+# 和风 iOS HEWEATHER.framework 使用文档
+
 1.工程配置
 2.接口和数据类对照
 3.数据类属性对照
 4.数据访问代码
 
 ## 1.工程配置
-### 1.1手动配置
-> 本 framework 采用 Objective-C 编译，将 framework 包导入到项目中即可
+### 1.1 手动配置
+* 本 framework 采用 Objective-C 编译，将 framework 包导入到项目中即可
 
-> 如果工程是由swift编写：
+* 如果工程是由swift编写：
 
 （1）在Swift工程主目录下新建一个OC类，如果是项目第一次创建OC类的话，会弹出如图的提示窗。这个提示窗就是是否建立Swift-OC的桥接文件的弹窗提示。
 
@@ -16,20 +18,20 @@
 
 （3）在Swift-OC桥接文件里将本framework类进行声明,即可以使用。
 
-> sdk需要开启定位权限，请在工程plist.info文件中添加NSLocationAlwaysAndWhenInUseUsageDescription和NSLocationWhenInUseUsageDescription
+（4）sdk需要开启定位权限，请在工程plist.info文件中添加NSLocationAlwaysAndWhenInUseUsageDescription和NSLocationWhenInUseUsageDescription
 
-### 1.2自动配置
-> 支持cocoaPods
- 
-> podfile添加pod 'HeWeatherSDK'
+### 1.2 自动配置
+* pod update
 
-> 执行pod install即可
+* podfile添加pod 'HeWeatherSDK'
 
+* pod install
 
-### 1.3引用库
+### 1.3 引用库
 > AFNetworking 
 
-> YYModel  
+### 1.4 注意事项
+* 若产生崩溃unrecognized selector sent to ...，请在Build Settings中的Other Linker Flags里加上-ObjC
 
 ## 2.接口和数据类对照
 
@@ -61,25 +63,50 @@
 * 详见同目录《和风 iOS HEWEATHER.framework 实体类属性对照》
 
 ## 4.数据访问代码
-> 4.1 framework 不提供日志功能， 错误信息可由回调函数 - (void)weatherWithInquireType:(INQUIRE_TYPE)inquireType WithSuccess:(void(^)(id responseObject))getSuccess faileureForError:(void(^)(NSError *error))getError 中的 getError 对象提供
 
-> 4.2 使用 framework 时，调用单例方法 sharedInstance 即可（或自行使用 init 方法）
->
-* +(instancetype)sharedInstance;
+### 4.1 framework 不提供日志功能， 错误信息可由以下回调函数getError中获得
+ 
+ ```
+- (void)weatherWithInquireType:(INQUIRE_TYPE)inquireType
+                   WithSuccess:(void(^)(id responseObject))getSuccess
+              faileureForError:(void(^)(NSError *error))getError;
+  
+ ```            
 
-* -(instancetype)init;
+              
+### 4.2 使用 framework 时，调用单例方法 sharedInstance 即可（或自行使用 init 方法）
 
-> 4.3 根据您的需求调用不同的方法,接口回调方法中的参数就是接口返回的数据类
+```
+ +(instancetype)sharedInstance;
 
-示例
+ -(instancetype)init;
+ 
+```
 
-```js
+### 4.3 根据您的需求调用不同的InquireType,接口回调方法中的参数就是接口返回的数据类
 
- 在 AppDelegate 中添加 username 和 key
+1. 在 AppDelegate 中添加 username 和 key
 
+```objc
  HeConfigInstance.kHeAppUsername = @"";
  HeConfigInstance.kHeAppKey = @"";
+```
 
+2. 设置用户类型SDK会使用不同的api访问
+
+* 付费用户设置为
+```
+HeConfigInstance.userType = USER_TYPE_USER;
+```
+* 普通用户设置为
+```
+HeConfigInstance.userType = USER_TYPE_FREE_USER;
+```
+* 也可以调用-(void)changeDomain:(NSString *)domain接口修改SDK的访问域名
+
+3. 在需要使用的地方加入以下代码输入所需参数即可
+  
+```
 /**
  * 实况天气
  * 实况天气即为当前时间点的天气状况以及温湿风压等气象指数，具体包含的数据：体感温度、
@@ -91,19 +118,11 @@
  * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
  */
 
- AllWeatherInquieirs *heWeather = [AllWeatherInquieirs sharedInstance];
- 或
- AllWeatherInquieirs *heWeather = [[AllWeatherInquieirs alloc] init];
-
- heWeather.userType = @"";(枚举)
-
+ AllWeatherInquieirs *heWeather = [AllWeatherInquieirs sharedInstance];//或AllWeatherInquieirs *heWeather = [[AllWeatherInquieirs alloc] init];
+ heWeather.userType = @"";
  heWeather.location = @"";
- heWeather.lang = @"";
- 或
- heWeather.languageType = @"";(枚举)
- heWeather.unit = @"";
- 或
- heWeather.unitType = @"";(枚举)
+ heWeather.lang = @"";//或heWeather.languageType = @"";
+ heWeather.unit = @"";//或heWeather.unitType = @"";
 
  [heWeather weatherWithInquireType:INQUIRE_TYPE_WEATHER_NOW WithSuccess:^(id responseObject) {
 
@@ -111,9 +130,6 @@
 
  }];
 ```
-
-
-
 # 地址详解，location参数
 权限说明 | 代码
 --------- | -------------
@@ -124,5 +140,8 @@
 城市名称,上级城市 或 省 或 国家，英文逗号分隔，此方式可以在重名的情况下只获取想要的地区的天气数据，例如 西安,陕西 | location=朝阳,北京、 location=chaoyang,beijing
 IP | location=60.194.130.1
 根据请求自动判断，根据用户的请求获取IP，通过 IP 定位并获取城市数据 | location=auto_ip(固定参数)
+
+
+
 # 更多信息上[和风天气官网](https://www.heweather.com) 查看
 

@@ -17,14 +17,14 @@ FOUNDATION_EXPORT const unsigned char HeWeatherVersionString[];
 //  #import <HeWeather/HeWeather.h>
 
 
-/* 当前版本 2019-04-09 1.7.3 */
+/* 当前版本 2019-04-22 1.8 */
 
 /**
  * 写在前面的（废）话
  *
- * 此项目中用到了 AFN 进行网络请求 YYModel进行数据解析
+ * 此项目中用到了 AFN 进行网络请求 
  *
- * 使用时请确保你的项目中有 AFN YYModel （如使用pod导入YYKit请将YYKit组件分开导入避免引起冲突）
+ * 使用时请确保你的项目中有 AFN
  */
 /**
  * sdk需要开启定位权限，请在工程plist.info文件中添加NSLocationAlwaysAndWhenInUseUsageDescription和NSLocationWhenInUseUsageDescription
