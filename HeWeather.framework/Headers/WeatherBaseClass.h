@@ -4,165 +4,78 @@
 
 #import "HeWeatherBaseModel.h"
 
-@class WeatherBaseClassNow,WeatherBaseClassBasic,WeatherBaseClassUpdate,WeatherBaseClassDaily_Forecast,WeatherBaseClassHourly,WeatherBaseClassLifestyle;
+@class Daily,Now,Hourly,Refer;
 @interface WeatherBaseClass : HeWeatherBaseModel
-
-@property (nonatomic, strong) NSArray<WeatherBaseClassHourly *> *hourly;
-
-@property (nonatomic, copy) NSString *status;
-
-@property (nonatomic, strong) NSArray<WeatherBaseClassDaily_Forecast *> *daily_forecast;
-
-@property (nonatomic, strong) WeatherBaseClassNow *now;
-
-@property (nonatomic, strong) WeatherBaseClassUpdate *update;
-
-@property (nonatomic, strong) WeatherBaseClassBasic *basic;
-
-@property (nonatomic, strong) NSArray<WeatherBaseClassLifestyle *> *lifestyle_forecast;
-
-@property (nonatomic, strong) NSArray<WeatherBaseClassLifestyle *> *lifestyle;
-
+@property (nonatomic , copy) NSString              * code;
+@property (nonatomic , copy) NSString              * updateTime;
+@property (nonatomic , copy) NSString              * fxLink;
+@property (nonatomic , strong) Now              * now;
+@property (nonatomic , strong) NSArray<Daily *>              * daily;
+@property (nonatomic , strong) NSArray<Hourly *>              * hourly;
+@property (nonatomic , strong) Refer *refer;
 @end
-@interface WeatherBaseClassNow : HeWeatherBaseModel
-
-@property (nonatomic, copy) NSString *hum;
-
-@property (nonatomic, copy) NSString *fl;
-
-@property (nonatomic, copy) NSString *wind_dir;
-
-@property (nonatomic, copy) NSString *pres;
-
-@property (nonatomic, copy) NSString *vis;
-
-@property (nonatomic, copy) NSString *wind_spd;
-
-@property (nonatomic, copy) NSString *wind_deg;
-
-@property (nonatomic, copy) NSString *wind_sc;
-
-@property (nonatomic, copy) NSString *pcpn;
-
-@property (nonatomic, copy) NSString *cond_txt;
-
-@property (nonatomic, copy) NSString *tmp;
-
-@property (nonatomic, copy) NSString *cond_code;
-
+@interface Now :HeWeatherBaseModel
+@property (nonatomic , copy) NSString              * obsTime;
+@property (nonatomic , copy) NSString              * temp;
+@property (nonatomic , copy) NSString              * feelsLike;
+@property (nonatomic , copy) NSString              * icon;
+@property (nonatomic , copy) NSString              * text;
+@property (nonatomic , copy) NSString              * wind360;
+@property (nonatomic , copy) NSString              * windDir;
+@property (nonatomic , copy) NSString              * windScale;
+@property (nonatomic , copy) NSString              * windSpeed;
+@property (nonatomic , copy) NSString              * humidity;
+@property (nonatomic , copy) NSString              * precip;
+@property (nonatomic , copy) NSString              * pressure;
+@property (nonatomic , copy) NSString              * vis;
+@property (nonatomic , copy) NSString              * cloud;
+@property (nonatomic , copy) NSString              * dew;
 @end
-
-@interface WeatherBaseClassBasic : HeWeatherBaseModel
-
-@property (nonatomic, copy) NSString *location;
-
-@property (nonatomic, copy) NSString *cnty;
-
-@property (nonatomic, copy) NSString *tz;
-
-@property (nonatomic, copy) NSString *admin_area;
-
-@property (nonatomic, copy) NSString *lon;
-
-@property (nonatomic, copy) NSString *lat;
-
-@property (nonatomic, copy) NSString *parent_city;
-
-@property (nonatomic, copy) NSString *cid;
-
+@interface Daily :HeWeatherBaseModel
+@property (nonatomic , copy) NSString              * fxDate;
+@property (nonatomic , copy) NSString              * sunrise;
+@property (nonatomic , copy) NSString              * sunset;
+@property (nonatomic , copy) NSString              * moonrise;
+@property (nonatomic , copy) NSString              * moonset;
+@property (nonatomic , copy) NSString              * moonPhase;
+@property (nonatomic , copy) NSString              * tempMax;
+@property (nonatomic , copy) NSString              * tempMin;
+@property (nonatomic , copy) NSString              * iconDay;
+@property (nonatomic , copy) NSString              * textDay;
+@property (nonatomic , copy) NSString              * iconNight;
+@property (nonatomic , copy) NSString              * textNight;
+@property (nonatomic , copy) NSString              * wind360Day;
+@property (nonatomic , copy) NSString              * windDirDay;
+@property (nonatomic , copy) NSString              * windScaleDay;
+@property (nonatomic , copy) NSString              * windSpeedDay;
+@property (nonatomic , copy) NSString              * wind360Night;
+@property (nonatomic , copy) NSString              * WindDirNight;
+@property (nonatomic , copy) NSString              * windScaleNight;
+@property (nonatomic , copy) NSString              * windSpeedNight;
+@property (nonatomic , copy) NSString              * humidity;
+@property (nonatomic , copy) NSString              * precip;
+@property (nonatomic , copy) NSString              * pressure;
+@property (nonatomic , copy) NSString              * vis;
+@property (nonatomic , copy) NSString              * cloud;
+@property (nonatomic , copy) NSString              * uvIndex;
 @end
-
-@interface WeatherBaseClassUpdate : HeWeatherBaseModel
-
-@property (nonatomic, copy) NSString *loc;
-
-@property (nonatomic, copy) NSString *utc;
-
+@interface Hourly :HeWeatherBaseModel
+@property (nonatomic , copy) NSString              * fxTime;
+@property (nonatomic , copy) NSString              * temp;
+@property (nonatomic , copy) NSString              * icon;
+@property (nonatomic , copy) NSString              * text;
+@property (nonatomic , copy) NSString              * wind360;
+@property (nonatomic , copy) NSString              * windDir;
+@property (nonatomic , copy) NSString              * windScale;
+@property (nonatomic , copy) NSString              * windSpeed;
+@property (nonatomic , copy) NSString              * humidity;
+@property (nonatomic , copy) NSString              * precip;
+@property (nonatomic , copy) NSString              * pop;
+@property (nonatomic , copy) NSString              * pressure;
+@property (nonatomic , copy) NSString              * cloud;
+@property (nonatomic , copy) NSString              * dew;
 @end
-
-@interface WeatherBaseClassDaily_Forecast : HeWeatherBaseModel
-
-@property (nonatomic, copy) NSString *hum;
-
-@property (nonatomic, copy) NSString *cond_txt_d;
-
-@property (nonatomic, copy) NSString *wind_dir;
-
-@property (nonatomic, copy) NSString *pres;
-
-@property (nonatomic, copy) NSString *tmp_max;
-
-@property (nonatomic, copy) NSString *uv_index;
-
-@property (nonatomic, copy) NSString *vis;
-
-@property (nonatomic, copy) NSString *wind_spd;
-
-@property (nonatomic, copy) NSString *cond_code_n;
-
-@property (nonatomic, copy) NSString *date;
-
-@property (nonatomic, copy) NSString *wind_deg;
-
-@property (nonatomic, copy) NSString *cond_code_d;
-
-@property (nonatomic, copy) NSString *pcpn;
-
-@property (nonatomic, copy) NSString *tmp_min;
-
-@property (nonatomic, copy) NSString *cond_txt_n;
-
-@property (nonatomic, copy) NSString *wind_sc;
-
-@property (nonatomic, copy) NSString *pop;
-
-@property (nonatomic, copy) NSString *sr;
-
-@property (nonatomic, copy) NSString *ss;
-
-@property (nonatomic, copy) NSString *mr;
-
-@property (nonatomic, copy) NSString *ms;
-
+@interface Refer :HeWeatherBaseModel
+@property (nonatomic,strong) NSArray<NSString *> *sources;
+@property (nonatomic,strong) NSArray<NSString *> *license;
 @end
-
-@interface WeatherBaseClassHourly : HeWeatherBaseModel
-
-@property (nonatomic, copy) NSString *hum;
-
-@property (nonatomic, copy) NSString *cloud;
-
-@property (nonatomic, copy) NSString *pres;
-
-@property (nonatomic, copy) NSString *wind_dir;
-
-@property (nonatomic, copy) NSString *time;
-
-@property (nonatomic, copy) NSString *wind_spd;
-
-@property (nonatomic, copy) NSString *wind_deg;
-
-@property (nonatomic, copy) NSString *wind_sc;
-
-@property (nonatomic, copy) NSString *cond_txt;
-
-@property (nonatomic, copy) NSString *tmp;
-
-@property (nonatomic, copy) NSString *pop;
-
-@property (nonatomic, copy) NSString *cond_code;
-
-@end
-
-@interface WeatherBaseClassLifestyle : HeWeatherBaseModel
-
-@property (nonatomic, copy) NSString *date;
-
-@property (nonatomic, copy) NSString *brf;
-
-@property (nonatomic, copy) NSString *txt;
-
-@property (nonatomic, copy) NSString *type;
-
-@end
-

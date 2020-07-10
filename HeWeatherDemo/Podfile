@@ -2,7 +2,5 @@
 # platform :ios, '9.0'
 
 target 'HeWeatherDemo' do
-pod 'HeWeatherSDK', '~> 1.4.8'
-
-
+pod 'HeWeatherSDK', '~> 4.0'
 end

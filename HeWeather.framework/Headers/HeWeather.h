@@ -2,7 +2,7 @@
 //  HeWeather.h
 //  HeWeather
 //
-//  Created by 宋朝阳 on 2018/5/28.
+//  Created by 且随疾风前行 on 2018/5/28.
 //  Copyright © 2018年 Song. All rights reserved.
 //
 
@@ -17,17 +17,17 @@ FOUNDATION_EXPORT const unsigned char HeWeatherVersionString[];
 //  #import <HeWeather/HeWeather.h>
 
 
-/* 当前版本 2019-04-22 1.8 */
+/* 当前版本 2020-07-02 4.0 */
 
 /**
  * 写在前面的（废）话
  *
  * 此项目中用到了 AFN 进行网络请求 
  *
- * 使用时请确保你的项目中有 AFN
+ * 使用时请确保你的项目中有 AFN（4.0.0+）
  */
 /**
- * sdk需要开启定位权限，请在工程plist.info文件中添加NSLocationAlwaysAndWhenInUseUsageDescription和NSLocationWhenInUseUsageDescription
+ * sdk需要开启定位权限，请在工程plist.info文件中添加NSLocationWhenInUseUsageDescription
  */
 
 /**
