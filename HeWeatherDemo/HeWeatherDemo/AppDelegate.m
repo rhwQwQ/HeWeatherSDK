@@ -27,23 +27,38 @@
     // Override point for customization after application launch.
     //1.获取AllWeatherInquieirs单例对象并对其进行参数设置
     AllWeatherInquieirs *sharedAllWeather =[AllWeatherInquieirs sharedInstance];
-    sharedAllWeather.publicID = @"";
-    sharedAllWeather.appKey = @"";
+    //    包年包月    IOS-hecube
+    //    sharedAllWeather.kHeAppUsername = @"HE1812141906451678";
+    //    sharedAllWeather.kHeAppKey = @"e61a16dac71e462491b90bc309e44587";
+    //    包年包月    IOS-hetest
+    //    sharedAllWeather.kHeAppUsername = @"HE1812141907051610";
+    //    sharedAllWeather.kHeAppKey = @"dd4bacc73f65411f93007db604c99080";
+    //    按量计费    IOS-hecube
+    //
+//    sharedAllWeather.publicID = @"HE2004221020081507";
+//    sharedAllWeather.appKey = @"91172ffbd6b4486ea17e0129faac7d44";
+        sharedAllWeather.publicID = @"";
+        sharedAllWeather.appKey = @"";
     sharedAllWeather.appType = APP_TYPE_BIZ;
-    sharedAllWeather.kHeAppUsername = @"HE1809171735131493";
-    sharedAllWeather.kHeAppKey = @"fee86946692e4ba5a812177a6aa0b3a2";
-    sharedAllWeather.userType = USER_TYPE_FREE_USER;
-//    [self getWeatherBaseClass];//常规天气数据集合
-//    [self getWeatherGridNowBaseClass];//格点实况天气
-//    [self getWeatherGridMinuteBaseClass];//分钟级降雨（邻近预报）
-//    [self getAirNowBaseClass];//空气质量实况
-//    [self getAlarmBaseClass];//天气灾害预警
-//    [self getAlarmAllBaseClass];
-//    [self getScenicBaseClass];//景点天气预报
-//    [self getWeatherLifestyleBaseClass];//生活指数
+    
+    //    sharedAllWeather.languageType = LANGUAGE_TYPE_EN;
+    ////    [sharedAllWeather changeDomain:@"https://hfapp-api.heweather.net"];
+    
+    
+    //    sharedAllWeather.kHeAppUsername = @"HE1809171735131493";
+    //    sharedAllWeather.kHeAppKey = @"fee86946692e4ba5a812177a6aa0b3a2";
+    //    sharedAllWeather.userType = USER_TYPE_FREE_USER;
+//            [self getWeatherBaseClass];//常规天气数据集合
+    //    [self getWeatherGridNowBaseClass];//格点实况天气
+//                [self getWeatherGridMinuteBaseClass];//分钟级降雨（邻近预报）
+//                [self getAirNowBaseClass];//空气质量实况
+//                [self getAlarmBaseClass];//天气灾害预警
+//            [self getAlarmAllBaseClass];
+//                [self getScenicBaseClass];//景点天气预报
+//        [self getWeatherLifestyleBaseClass];//生活指数
 //    [sharedAllWeather changeDomain:@"http://192.168.1.9:8084"];
-//    [self getSearchBaseClasse];//城市查询
-//    [self getWeatherHistoricalBaseClass];//历史数据
+//            [self getSearchBaseClasse];//城市查询
+    [self getWeatherHistoricalBaseClass];//历史数据
 //    [self getMoonSoonClasse];
     return YES;
 }
@@ -121,14 +136,14 @@
     HeConfigInstance.location = @"116.40,39.99";
     HeConfigInstance.lang = @"";
     HeConfigInstance.unit = @"";
-    //    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_GRID WithSuccess:^(WeatherGridForecastBaseClass  *responseObject) {
-    //
-    //        HeWeatherLog(@"描述->%@",[responseObject description]);
-    //
-    //    } faileureForError:^(NSError *error) {
-    //        HeWeatherLog(@"error->%@",error);
-    //
-    //    }];
+//    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_GRID WithSuccess:^(WeatherGridForecastBaseClass  *responseObject) {
+//
+//        HeWeatherLog(@"描述->%@",[responseObject description]);
+//
+//    } faileureForError:^(NSError *error) {
+//        HeWeatherLog(@"error->%@",error);
+//
+//    }];
     
 }
 
